@@ -1,0 +1,30 @@
+# IDE Configuration
+.idea/
+.vscode/
+*.iml
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+
+# Project-specific
+data/*.pkl
+Attendance/*.csv
+
+# Keep folder structure
+!data/.gitkeep
+!Attendance/.gitkeep
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.log
+*.tmp

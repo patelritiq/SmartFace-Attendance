@@ -1,0 +1,15 @@
+# SmartFace Attendance System Dependencies
+
+# Computer Vision
+opencv-python>=4.5.0
+
+# Machine Learning
+scikit-learn>=0.24.0
+
+# Numerical Computing
+numpy>=1.19.0
+
+# Text-to-Speech (Windows only)
+pywin32>=300
+
+# Note: For non-Windows systems, comment out pywin32 and modify the speak() function in Attendance.py

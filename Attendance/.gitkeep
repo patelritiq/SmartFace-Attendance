@@ -1,0 +1,2 @@
+# This file ensures the Attendance/ directory is tracked by git
+# Actual .csv files are ignored via .gitignore

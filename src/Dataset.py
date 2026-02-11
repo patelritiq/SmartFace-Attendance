@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 video = cv2.VideoCapture(0)
-facedetect = cv2.CascadeClassifier("haarcascade_frontalface_default .xml")
+facedetect = cv2.CascadeClassifier("../models/haarcascade_frontalface_default.xml")
 
 faces_data = []
 
@@ -12,7 +12,7 @@ i = 0
 
 name = input("Enter Your Name: ")
 
-# Collect exactly 100 face samples
+# Collect 100 face samples
 TOTAL_SAMPLES = 100
 SAMPLE_INTERVAL = 5  # Take every 5th frame to avoid duplicates
 
@@ -56,17 +56,24 @@ faces_data = np.asarray(faces_data)
 faces_data = faces_data.reshape(-1, 3750)
 
 
+# Ensure data directory exists
+os.makedirs("../data", exist_ok=True)
+
 # Clear existing data files to start fresh
-if os.path.exists("data/names.pkl"):
-    os.remove("data/names.pkl")
-if os.path.exists("data/faces_data.pkl"):
-    os.remove("data/faces_data.pkl")
+if os.path.exists("../data/names.pkl"):
+    os.remove("../data/names.pkl")
+if os.path.exists("../data/faces_data.pkl"):
+    os.remove("../data/faces_data.pkl")
 
 # Create labels matching the number of collected faces
 names = [name] * len(faces_data)
-with open("data/names.pkl", "wb") as f:
+with open("../data/names.pkl", "wb") as f:
     pickle.dump(names, f)
 
 # Save face data
-with open("data/faces_data.pkl", "wb") as f:
+with open("../data/faces_data.pkl", "wb") as f:
     pickle.dump(faces_data, f)
+
+print(f"\n✓ Dataset created successfully!")
+print(f"✓ Collected {len(faces_data)} samples for {name}")
+print(f"✓ Data saved to ../data/ directory")
