@@ -15,7 +15,10 @@ ENV/
 
 # Project-specific
 data/*.pkl
+names.pkl
+faces_data.pkl
 Attendance/*.csv
+Attendance_/*.csv
 
 # Keep folder structure
 !data/.gitkeep
