@@ -144,7 +144,8 @@ SmartFace-Attendance/
 ├── .gitignore                              # Git ignore rules
 ├── requirements.txt                        # Python dependencies
 ├── LICENSE                                 # MIT License
-└── README.md                               # Project documentation
+├── README.md                               # Project documentation
+└── QUICKSTART.md                           # Quick setup guide
 ```
 
 **Note**: Personal data files (`.pkl`, `.csv`) are excluded from git via `.gitignore` for privacy.
